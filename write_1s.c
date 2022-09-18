@@ -20,12 +20,8 @@ int	write_1s_top(char **output, char **input, int n)
 		{
 			if (output[0][in_column] == '0')
 				output[0][in_column] = '4';
-
 			else if (output[0][in_column] != '4')
-			{
-					
 				return (0);
-			}
 		}
 	}
 	return (1);

@@ -32,6 +32,9 @@ int		write_1s_bottom(char **output, char **input, int n);
 int		write_1s_left(char **output, char **input, int n);
 int		write_1s_right(char **output, char **input, int n);
 int		write_1s(char **output, char **input, int n);
+int		validate_input_comb(char **input);
+int		validate_current_grid(char **output);
+int		write_3s_top(char **output, char **input, int n);
 
 void	print(int array[N][N]);
 int		is_safe(int grid[N][N], int row, int col, int num);
@@ -52,7 +55,22 @@ int	main(int argc, char **argv)
 		only_numbers = rm_space(argv[1]);
 		input = treat_input(only_numbers);
 		output = generate_output(4);
+		if (!validate_input_comb(input))
+		{
+			write (1, "Error", 5);
+			return (0);			
+		}
 		if (!write_4s(output, input, 4) && !write_1s(output, input, 4))
+		{
+			write (1, "Error", 5);
+			return (0);
+		}
+		if (!validate_current_grid(output))
+		{
+			write (1, "Error", 5);
+			return (0);
+		}
+		if (!write_3s_top(output, input, 4))
 		{
 			write (1, "Error", 5);
 			return (0);
