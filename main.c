@@ -6,7 +6,7 @@
 /*   By: mvenanci <mvenanci@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/17 10:47:53 by mvenanci          #+#    #+#             */
-/*   Updated: 2022/09/18 19:30:02 by mvenanci         ###   ########.fr       */
+/*   Updated: 2022/09/18 20:19:58 by mvenanci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,7 @@ int		write_1s(char **output, char **input, int n);
 int		validate_input_comb(char **input);
 int		validate_current_grid(char **output);
 int		write_3s_top(char **output, char **input, int n);
+int		c_output(char **output);
 
 void	print(int array[N][N]);
 int		is_safe(int grid[N][N], int row, int col, int num);
@@ -73,8 +74,7 @@ int	main(int argc, char **argv)
 			write (1, "Error", 5);
 			return (0);
 		}
-		while (input[++i])
-			printf("%s\n", output[i]);
+		c_output(output);
 	}
 	else
 		write (1, "Error", 5);
@@ -92,6 +92,5 @@ int	write_4s(char **output, char **input, int n)
 	b = write_4s_rows_in_output_left(output, input, n);
 	c = write_4s_columns_in_output_bottom(output, input, n);
 	d = write_4s_rows_in_output_right(output, input, 4);
-	printf("%d %d %d %d\n",a ,b, c, d);
 	return (a * b * c * d);
 }

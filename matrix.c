@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   matrix.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cosvaldo <cosvaldo@student.42lisboa.com    +#+  +:+       +#+        */
+/*   By: mvenanci <mvenanci@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/17 10:56:24 by cosvaldo          #+#    #+#             */
-/*   Updated: 2022/09/18 16:03:42 by cosvaldo         ###   ########.fr       */
+/*   Updated: 2022/09/18 20:22:37 by mvenanci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,6 @@
 #include <stdlib.h>
 
 #define N 4
-
-char	**generate_output(int n);
 
 void	print(int array[N][N])
 {
@@ -74,33 +72,6 @@ int	solve_matrix(int grid[N][N], int row, int col)
 	return (0);
 }
 
-int	ft_atoi(char *str)
-{
-	int	length;
-	int	count;
-	int	num;
-
-	length = 0;
-	count = 0;
-	num = 0;
-	while (str[length])
-		length++;
-	while (count < N)
-	{
-		if (str[count] >= 48 && str[count] <= 57)
-		{
-			while ((str[count] >= 48) && (str[count] <= 57))
-			{
-				num = (10 * num - (str[count] - 48));
-				count++;
-			}
-			break ;
-		}
-		count++;
-	}
-	return (num);
-}
-
 int	c_output(char **output)
 {
 	int	grid[N][N];
@@ -113,16 +84,9 @@ int	c_output(char **output)
 		j = -1;
 		while (++j < N)
 		{
-			grid[i][j] = output[i][j] - '0';	
+			grid[i][j] = output[i][j] - '0';
 		}
 	}
-/*	 = {\
-		{1, 2, 3, 4}, \
-		{2, 3, 4, 0}, \
-		{3, 4, 0, 0}, \
-		{4, 0, 0, 0} \
-		};
-*/
 	if (solve_matrix(grid, 0, 0) == 1)
 		print(grid);
 	else
