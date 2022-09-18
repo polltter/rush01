@@ -3,16 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mvenanci <mvenanci@student.42lisboa.com    +#+  +:+       +#+        */
+/*   By: cosvaldo <cosvaldo@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/17 10:47:53 by mvenanci          #+#    #+#             */
-/*   Updated: 2022/09/18 13:57:45 by mvenanci         ###   ########.fr       */
+/*   Updated: 2022/09/18 15:14:00 by cosvaldo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include <unistd.h>
 #include <stdio.h>
+
+#define N 4
 
 int		valid_input(char *str);
 int		is_num(char c);
@@ -25,6 +27,12 @@ int		write_4s_rows_in_output_left(char **output, char **input, int n);
 int		write_4s_columns_in_output_bottom(char **output, char **input, int n);
 int		write_4s_rows_in_output_right(char **output, char **input, int n);
 int		write_4s(char **output, char **input, int n);
+
+void	print(int array[N][N]);
+int		is_safe(int grid[N][N], int row, int col, int num);
+int		solve_matrix(int grid[N][N], int row, int col);
+int		ft_atoi(char *str);
+int		test(void);
 
 int	main(int argc, char **argv)
 {
@@ -65,4 +73,3 @@ int	write_4s(char **output, char **input, int n)
 	d = write_4s_rows_in_output_right(output, input, 4);
 	return (a * b * c * d);
 }
-
