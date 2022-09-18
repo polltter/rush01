@@ -48,7 +48,9 @@ int	main(int argc, char **argv)
 	int		i;
 	char	*only_numbers;
 	char	**output;
+	int		val;
 
+	val = 0;
 	i = -1;
 	if (argc == 2 && valid_input(argv[1]))
 	{
@@ -56,27 +58,23 @@ int	main(int argc, char **argv)
 		input = treat_input(only_numbers);
 		output = generate_output(4);
 		if (!validate_input_comb(input))
+			write (1, "Error (1)\n", 11);
+		if (!write_4s(output, input, 4))
 		{
-			write (1, "Error", 5);
-			return (0);			
-		}
-		if (!write_4s(output, input, 4) && !write_1s(output, input, 4))
-		{
-			write (1, "Error", 5);
+			write (1, "Error (2)\n", 11);
+			while (input[++i])
+				printf("%s\n", output[i]);
 			return (0);
 		}
+		if (!write_1s(output, input, 4))
+			write (1, "Error (3)\n", 11);
 		if (!validate_current_grid(output))
-		{
-			write (1, "Error", 5);
-			return (0);
-		}
+			write (1, "Error (4)\n", 11);
 		if (!write_3s_top(output, input, 4))
 		{
 			write (1, "Error", 5);
 			return (0);
 		}
-		while (input[++i])
-			printf("%s\n", output[i]);
 	}
 	else
 		write (1, "Error", 5);
@@ -94,5 +92,6 @@ int	write_4s(char **output, char **input, int n)
 	b = write_4s_rows_in_output_left(output, input, n);
 	c = write_4s_columns_in_output_bottom(output, input, n);
 	d = write_4s_rows_in_output_right(output, input, 4);
+	printf("%d %d %d %d\n",a ,b, c, d);
 	return (a * b * c * d);
 }

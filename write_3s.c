@@ -26,4 +26,5 @@ int	write_3s_top(char **output, char **input, int n)
 		&& output[2][in_column] != '4')
 			return (0);
 	}
+	return (1);
 }

@@ -28,21 +28,26 @@ int	validate_input_comb(char **input)
 
 int	validate_current_grid(char **output)
 {
-	int	diagonal;
+	int	row;
+	int	column;
 	int	i;
 
-	diagonal = -1;
-	while (++diagonal < 4)
+	row = -1;
+	while (++row < 4)
 	{
-		i = -1;
-		while (++i < 4)
+		column = -1;
+		while (++column < 4)
 		{
-			if ( i == diagonal)
-				;
-			else if ((output[diagonal][diagonal] == output[diagonal][i] \
-			|| output[diagonal][diagonal] == output[i][diagonal]) \
-			&& output[diagonal][diagonal] != '0')
-				return (0);
+			i = -1;
+			while (++i < 4)
+			{
+				if ((output[row][column] == output[row][i] \
+				|| output[row][column] == output[i][column]) \
+				&& (i != row && i != column)\
+				&& output[row][column] != '0')
+					return (0);
+			}
+			
 		}
 	}
 	return (1);
