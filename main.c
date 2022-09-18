@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cosvaldo <cosvaldo@student.42lisboa.com    +#+  +:+       +#+        */
+/*   By: mvenanci <mvenanci@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/17 10:47:53 by mvenanci          #+#    #+#             */
-/*   Updated: 2022/09/18 15:14:00 by cosvaldo         ###   ########.fr       */
+/*   Updated: 2022/09/18 19:30:02 by mvenanci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,8 +62,6 @@ int	main(int argc, char **argv)
 		if (!write_4s(output, input, 4))
 		{
 			write (1, "Error (2)\n", 11);
-			while (input[++i])
-				printf("%s\n", output[i]);
 			return (0);
 		}
 		if (!write_1s(output, input, 4))
@@ -75,6 +73,8 @@ int	main(int argc, char **argv)
 			write (1, "Error", 5);
 			return (0);
 		}
+		while (input[++i])
+			printf("%s\n", output[i]);
 	}
 	else
 		write (1, "Error", 5);

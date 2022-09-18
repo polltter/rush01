@@ -6,10 +6,11 @@
 /*   By: mvenanci <mvenanci@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/17 15:43:47 by mvenanci          #+#    #+#             */
-/*   Updated: 2022/09/18 13:38:54 by mvenanci         ###   ########.fr       */
+/*   Updated: 2022/09/18 19:29:39 by mvenanci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdio.h>
 #include <stdlib.h>
 
 char	**generate_output(int n);
@@ -112,7 +113,7 @@ int	write_4s_columns_in_output_bottom(char **output, char **input, int n)
 			{
 				if (output[out_row][in_column] == '0')
 					output[out_row][in_column] = -out_row + 4 + '0';
-				else if (output[out_row][in_column] != out_row + 1 + '0')
+				else if (output[out_row][in_column] != -out_row + 4 + '0')
 					return (0);
 			}
 		}
@@ -137,7 +138,7 @@ int	write_4s_rows_in_output_right(char **output, char **input, int n)
 				if (output[in_column][out_column] == '0' \
 				|| output[in_column][out_column] == -out_column + 4 + '0')
 					output[in_column][out_column] = -out_column + 4 + '0';
-				else if (output[in_column][out_column] != out_column + 1 + '0')
+				else if (output[in_column][out_column] != -out_column + 4 + '0')
 					return (0);
 			}
 		}
