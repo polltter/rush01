@@ -6,26 +6,31 @@
 /*   By: cosvaldo <cosvaldo@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/17 10:56:24 by cosvaldo          #+#    #+#             */
-/*   Updated: 2022/09/18 20:44:01 by cosvaldo         ###   ########.fr       */
+/*   Updated: 2022/09/18 21:28:10 by cosvaldo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
+#include <unistd.h>
 #include <stdlib.h>
 
 #define N 4
 
 void	print(int array[N][N])
 {
-	int	i;
-	int	j;
+	int		i;
+	int		j;
 
 	i = -1;
 	while (++i < N)
 	{
 		j = -1;
 		while (++j < N)
-			printf("%d ", array[i][j]);
+		{
+			printf("%d", array[i][j]);
+			if (j < N - 1)
+				printf(" ");
+		}
 		printf("\n");
 	}
 }
@@ -90,6 +95,6 @@ int	c_output(char **output)
 	if (solve_matrix(grid, 0, 0) == 1)
 		print(grid);
 	else
-		printf("Error\n");
+		write(1, "Error\n", 5);
 	return (0);
 }

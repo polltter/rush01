@@ -6,7 +6,7 @@
 /*   By: cosvaldo <cosvaldo@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/17 10:47:53 by mvenanci          #+#    #+#             */
-/*   Updated: 2022/09/18 20:43:29 by cosvaldo         ###   ########.fr       */
+/*   Updated: 2022/09/18 20:49:06 by cosvaldo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,8 +40,6 @@ int		c_output(char **output);
 void	print(int array[N][N]);
 int		is_safe(int grid[N][N], int row, int col, int num);
 int		solve_matrix(int grid[N][N], int row, int col);
-//int		ft_atoi(char *str);
-//int		test(void);
 
 int	main(int argc, char **argv)
 {
