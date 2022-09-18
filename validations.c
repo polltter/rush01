@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   validations.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: cosvaldo <cosvaldo@student.42lisboa.com    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/09/18 20:34:24 by cosvaldo          #+#    #+#             */
+/*   Updated: 2022/09/18 20:34:24 by cosvaldo         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <stdio.h>
 
 int	validate_input_comb(char **input);
@@ -12,13 +24,15 @@ int	validate_input_comb(char **input)
 	{
 		if (input[0][column] == '4' && input[1][column] != '1')
 			return (0);
-		if (input[0][column] == '3' && (input[1][column] != '1' && input[1][column] != '2'))
+		if (input[0][column] == '3' && (input[1][column] != '1' \
+		&& input[1][column] != '2'))
 			return (0);
 		if (input[0][column] == '2' && input[1][column] == '4')
 			return (0);
 		if (input[2][column] == '4' && input[3][column] != '1')
 			return (0);
-		if (input[2][column] == '3' && (input[3][column] != '1' && input[1][column] != '2'))
+		if (input[2][column] == '3' && (input[3][column] != '1' \
+		&& input[1][column] != '2'))
 			return (0);
 		if (input[2][column] == '2' && input[3][column] == '4')
 			return (0);
@@ -43,11 +57,10 @@ int	validate_current_grid(char **output)
 			{
 				if ((output[row][column] == output[row][i] \
 				|| output[row][column] == output[i][column]) \
-				&& (i != row && i != column)\
+				&& (i != row && i != column) \
 				&& output[row][column] != '0')
 					return (0);
 			}
-			
 		}
 	}
 	return (1);

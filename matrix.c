@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   matrix.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mvenanci <mvenanci@student.42lisboa.com    +#+  +:+       +#+        */
+/*   By: cosvaldo <cosvaldo@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/17 10:56:24 by cosvaldo          #+#    #+#             */
-/*   Updated: 2022/09/18 20:22:37 by mvenanci         ###   ########.fr       */
+/*   Updated: 2022/09/18 20:44:01 by cosvaldo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

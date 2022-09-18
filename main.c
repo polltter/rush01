@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mvenanci <mvenanci@student.42lisboa.com    +#+  +:+       +#+        */
+/*   By: cosvaldo <cosvaldo@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/17 10:47:53 by mvenanci          #+#    #+#             */
-/*   Updated: 2022/09/18 20:19:58 by mvenanci         ###   ########.fr       */
+/*   Updated: 2022/09/18 20:43:29 by cosvaldo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,16 +40,16 @@ int		c_output(char **output);
 void	print(int array[N][N]);
 int		is_safe(int grid[N][N], int row, int col, int num);
 int		solve_matrix(int grid[N][N], int row, int col);
-int		ft_atoi(char *str);
-int		test(void);
+//int		ft_atoi(char *str);
+//int		test(void);
 
 int	main(int argc, char **argv)
 {
-	char	**input;
 	int		i;
-	char	*only_numbers;
-	char	**output;
 	int		val;
+	char	**input;
+	char	**output;
+	char	*only_numbers;
 
 	val = 0;
 	i = -1;
